@@ -17,8 +17,8 @@ ALU Control lines | Function
         0110    Multiply
         0111    Bitwise-XOR
 */
-// Old code
-/*
+/* Old code */
+
 module ALU (
     input [31:0] in1,in2, 
     input[3:0] alu_control,
@@ -55,7 +55,6 @@ module ALU (
         
     end
 endmodule
-*/
 
 //////////////////////////////////////////////////////////////////////////////////
 /*New code*/
