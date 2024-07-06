@@ -39,16 +39,19 @@ In this approach, we implemented a top level Pocessor file and it's testbench pr
 <br>
 <li> <strong>Datapath </strong> : Uses alu_control & regWrite_control input of Control Unit to write the intermediate values before finally storing in Instruction memory. It also Instantiates ALU and REG_File.</li>
 <br>
-<li> <strong>ALU </strong> : ALU module, takes two operands of size 32-bits each and a 4-bit ALU_control as input (for performing operations based on it) and output is 32-bit ALU_result. If the ALU_result is zero, a ZERO FLAG is set.ALU functions  controlled by alu_control - 
-(0000) Bitwise-AND
-(0001) Bitwise-OR
-(0010) Add (A+B)
-(0100) Subtract (A-B)
-(1000) Set on less than
-(0011) Shift left logical
-(0101) Shift right logical
-(0110) Multiply
-(0111) Bitwise-XOR.</li>
+<li> <strong>ALU </strong> : ALU module, takes two operands of size 32-bits each and a 4-bit ALU_control as input (for performing operations based on it) and output is 32-bit ALU_result. If the ALU_result is zero, a ZERO FLAG is set. ALU functions  controlled by alu_control - 
+  <ul>
+<li>(0000) Bitwise-AND</li>
+<li>(0001) Bitwise-OR</li>
+<li>(0010) Add (A+B)</li>
+<li>(0100) Subtract (A-B)</li>
+<li>(1000) Set on less than</li>
+<li>(0011) Shift left logical</li>
+<li>(0101) Shift right logical</li>
+<li>(0110) Multiply</li>
+<li>(0111) Bitwise-XOR.</li>
+  </ul>
+</li>
 <br>
 <li> <strong>Register File module </strong> :A register file can read two registers and write in to one register. The RISC register file contains total of 32 registers each of size 32-bit. Hence 5-bits are used to specify the register numbers that are to be read or written. 
 Register Read: outputs the contents of the register corresponding to read register numbers specified.
@@ -56,7 +59,9 @@ Register Write: Register writes are controlled by a control signal RegWrite.
 The write should happen if RegWrite signal is made 1 and if there is positive edge of clock. 
 The register file will always output the vaules corresponding to read register numbers.</li>
 <br>
+</ul>
 
+#### Results :
 Main work was focused on Integration and Initial Testing of our code. Then after a series of Testing and Debugging, we successfully simulated the single-core MIPS based RISC Microprocessor to get expected results. Below ae the simulation results:
 
 <img src="https://github.com/arjun-593/Microprocessor-IITISoC-24/blob/main/data/demo/results_png" width = 848 height = 400>
