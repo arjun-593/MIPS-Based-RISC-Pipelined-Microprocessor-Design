@@ -1,21 +1,53 @@
 `timescale 1ns / 1ps
-`include "INST_MEM.v"
 
-module IFU(
-    input clock,reset,
-    output [31:0] Instruction_Code
-);
-reg [31:0] PC = 32'b0; 
+//////////////////////////////////////////////////////////////////////////////////
+// fullname : Milad Nooraei
+// student number : 9935701
+// Computer Architecture HomeWork 3
+//////////////////////////////////////////////////////////////////////////////////
 
-    // Initializing the instruction memory block
-    INST_MEM instr_mem(PC,reset,Instruction_Code);
+module fetchState(
+		input [31:0]branchTarget,
+		input clk, PCSource,   
+	
+		output [31:0]nextPC,		 
+		output [31:0]instruction,    
+		output hit_result
+    );
 
-    always @(posedge clock, posedge reset)
-    begin
-        if(reset == 1) 
-        PC <= 0;
-        else
-        PC <= PC+4;   
-    end
+    wire [31:0] muxToPC;
+    wire [31:0] outPC;
+    wire [127:0] dataLine;
+	 
+	Multiplexer2To1 the_Multiplexer2To1 (
+		 .A(nextPC), 
+		 .B(branchTarget), 
+		 .select(PCSource), 
+		 .Out(muxToPC)
+		 );	 
+		 
+	PC the_PC (
+		 .Address(muxToPC), 
+		 .clk(clk), 
+		 .hit(hit_result), 
+		 .result(outPC)
+		 );
+		 
+	instructionCache the_instructionCache (
+		 .address(outPC), 
+		 .inputData(dataLine), 
+		 .clk(clk), 
+		 .outData(instruction), 
+		 .hit(hit_result)
+		 );
+		 
+	instructionMem the_instructionMem (
+		 .address(outPC), 
+		 .clk(clk), 
+		 .outData(dataLine)
+		 );
+		 	 
+	 assign nextPC = outPC + 4;
+
 
 endmodule
