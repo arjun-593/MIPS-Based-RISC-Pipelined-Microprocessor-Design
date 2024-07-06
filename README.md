@@ -24,7 +24,7 @@ This repository contains the implementation of a 32-bit MIPS based RISC micropro
 ### Approach-1 :
 In this approach, we implemented a top level Pocessor file and it's testbench processor_tb to simulate our design. Our design consisted of Reg_files, Arithmetic Logical Unit, Datapath, Control Unit, Instruction Fetch Unit, Instruction_Memory with data stored. We started with implementing Direct Register Addressing mode.
 
-<img src="https://github.com/arjun-593/Microprocessor-IITISoC-24/blob/main/data/demo/png" width = 848 height = 400>
+<img src="https://github.com/arjun-593/Microprocessor-IITISoC-24/blob/main/data/demo/processor_png" width = 848 height = 400>
 
 Main work was focused on Integration and Initial Testing of our code. Then after a series of Testing and Debugging, we successfully simulated the single-core MIPS based RISC Microprocessor to get expected results. Below ae the simulation results:
 
