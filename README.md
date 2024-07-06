@@ -53,11 +53,12 @@ In this approach, we implemented a top level Pocessor file and it's testbench pr
   </ul>
 </li>
 <br>
-<li> <strong>Register File module </strong> :A register file can read two registers and write in to one register. The RISC register file contains total of 32 registers each of size 32-bit. Hence 5-bits are used to specify the register numbers that are to be read or written. 
-Register Read: outputs the contents of the register corresponding to read register numbers specified.
-Register Write: Register writes are controlled by a control signal RegWrite.  
-The write should happen if RegWrite signal is made 1 and if there is positive edge of clock. 
-The register file will always output the vaules corresponding to read register numbers.</li>
+<li> <strong>Register File module </strong> : A register file can read two registers and write in to one register. The RISC register file contains total of 32 registers each of size 32-bit. Hence 5-bits are used to specify the register numbers that are to be read or written.
+  <ul>
+<li>Register Read: outputs the contents of the register corresponding to read register numbers specified.</li>
+<li>Register Write: Register writes are controlled by a control signal RegWrite.</li>  
+  </ul>
+The write should happen if RegWrite signal is made 1 and if there is positive edge of clock. The register file will always output the vaules corresponding to read register numbers.</li>
 <br>
 </ul>
 
