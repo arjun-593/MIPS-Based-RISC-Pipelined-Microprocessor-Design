@@ -1,36 +1,84 @@
 `timescale 1ns / 1ps
 
 
-module CONTROL(
-    input [6:0] funct7,
-    input [2:0] funct3,
-    input [6:0] opcode,
-    output reg [3:0] alu_control,
-    output reg regwrite_control
-);
-    always @(funct3 or funct7 or opcode)
-    begin
-        if (opcode == 7'b0110011) begin // R-type instructions
 
-            regwrite_control = 1;
+module ControlUnit(
+	input [6:0]opcode,
+	
+	output reg regDST,
+	output reg ALUSrc,
+	output reg MemToReg,
+	output reg RegWrite,
+	output reg MemRead,
+	output reg MemWrite,
+	output reg Branch,
+	output reg [1:0]ALUOP
+    );
+	 
+	 always@(opcode)
+	 begin
+	 
+		if(opcode == 'b0110011)            //R-Type
+		begin
+			regDST = 1;
+	      ALUSrc = 0;
+			MemToReg = 0;
+			RegWrite = 1;
+			MemRead = 0;
+			MemWrite = 0;
+	      Branch = 0;
+	      ALUOP = 'b00;
+		end
+		
+		else if(opcode == 'b0010011)       //I-Type
+		begin
+			regDST = 1;
+	      ALUSrc = 1;
+			MemToReg = 0;
+			RegWrite = 1;
+			MemRead = 0;
+			MemWrite = 0;
+	      Branch = 0;
+	      ALUOP = 'b01;
+		end
+		
+		else if(opcode == 'b0000011)       //lw
+		begin
+			regDST = 1;
+	      ALUSrc = 1;
+			MemToReg = 1;
+			RegWrite = 1;
+			MemRead = 1;
+			MemWrite = 0;
+	      Branch = 0;
+	      ALUOP = 'b10;
+		end
+		
+		else if(opcode == 'b0100011)       //sw
+		begin
+			regDST = 0;
+	      ALUSrc = 1;
+			MemToReg = 0;
+			RegWrite = 0;
+			MemRead = 0;
+			MemWrite = 1;
+	      Branch = 0;
+	      ALUOP = 'b10;
+		end
+		
+		else if(opcode == 'b1100011)       //Branch
+		begin
+			regDST = 0;
+	      ALUSrc = 0;
+			MemToReg = 0;
+			RegWrite = 0;
+			MemRead = 0;
+			MemWrite = 0;
+	      Branch = 1;
+	      ALUOP = 'b11;
+		end
+	 
+	 end
 
-            case (funct3)
-                0: begin
-                    if(funct7 == 0)
-                    alu_control = 4'b0010; // ADD
-                    else if(funct7 == 32)
-                    alu_control = 4'b0100; // SUB
-                end
-                6: alu_control = 4'b0001; // OR
-                7: alu_control = 4'b0000; // AND
-                1: alu_control = 4'b0011; // SLL
-                5: alu_control = 4'b0101; // SRL
-				2: alu_control = 4'b0110; // MUL
-				4: alu_control = 4'b0111; // XOR
-            endcase
-
-      end
-
-    end
 
 endmodule
