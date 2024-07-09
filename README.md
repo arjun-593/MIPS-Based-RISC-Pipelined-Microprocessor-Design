@@ -18,7 +18,7 @@ Members:
 ### Outline :
 This repository contains the implementation of a 32-bit MIPS based RISC microprocessor using two different approaches. The main goal of this project was to understand the core fundamentals of Microprocessor design and Computer Oraganization and Architecture with a hardware description language like Verilog. The two approaches utilized are as follows:
 <br>
-- [Approach-1]() - Designed a single-core MIPS based RISC Microprocessor (Till Mid-Evaluation)
+- [Approach-1](https://github.com/arjun-593/Microprocessor-Design/tree/main/Approach-1) - Designed a single-core MIPS based RISC Microprocessor (Till Mid-Evaluation)
 - [Approach-2]() - Pipelined the existing design by bringing neseccary changes to existing modules and architecture.
 
 ### Approach-1 :
@@ -61,7 +61,6 @@ In this approach, we implemented a top level Pocessor file and it's testbench pr
 The write should happen if RegWrite signal is made 1 and if there is positive edge of clock. The register file will always output the vaules corresponding to read register numbers.</li>
 <br>
 </ul>
-
 #### Results :
 Main work was focused on Integration and Initial Testing of our code. Then after a series of Testing and Debugging, we successfully simulated the single-core MIPS based RISC Microprocessor to get expected results. Below ae the simulation results:
 
