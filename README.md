@@ -61,6 +61,7 @@ In this approach, we implemented a top level Pocessor file and it's testbench pr
 The write should happen if RegWrite signal is made 1 and if there is positive edge of clock. The register file will always output the vaules corresponding to read register numbers.</li>
 <br>
 </ul>
+
 #### Results :
 Main work was focused on Integration and Initial Testing of our code. Then after a series of Testing and Debugging, we successfully simulated the single-core MIPS based RISC Microprocessor to get expected results. Below ae the simulation results:
 
