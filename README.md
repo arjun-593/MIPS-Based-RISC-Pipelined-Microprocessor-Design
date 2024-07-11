@@ -24,7 +24,7 @@ This repository contains the implementation of a 32-bit MIPS based RISC micropro
 ### Approach-1 :
 In this approach, we implemented a top level Pocessor file and it's testbench processor_tb to simulate our design. Our design consisted of Reg_files, Arithmetic Logical Unit, Datapath, Control Unit, Instruction Fetch Unit, Instruction_Memory with data stored. We started with implementing Direct Register Addressing mode (R Type) with a total of 32 registers storing values.
 
-<img src="https://github.com/arjun-593/Microprocessor-IITISoC-24/blob/main/data/demo/processor_png" width = 848 height = 400>
+<img src="https://github.com/DeepeshBansal/Microprocessor-IITISoC-24/blob/main/data/demo/processor_png" width = 848 height = 400>
 
 #### Modules Explanation : 
 <br>
@@ -65,7 +65,7 @@ The write should happen if RegWrite signal is made 1 and if there is positive ed
 #### Results :
 Main work was focused on Integration and Initial Testing of our code. Then after a series of Testing and Debugging, we successfully simulated the single-core MIPS based RISC Microprocessor to get expected results. Below ae the simulation results:
 
-<img src="https://github.com/arjun-593/Microprocessor-IITISoC-24/blob/main/data/demo/results_png" width = 848 height = 400>
+<img src="https://github.com/DeepeshBansal/Microprocessor-IITISoC-24/blob/main/data/demo/results_png" width = 848 height = 400>
 
 #### Disadvantages :
 - Lacks parallelisation, So not very effective for some workloads.
@@ -74,3 +74,8 @@ Main work was focused on Integration and Initial Testing of our code. Then after
 
 ### Approach-2 :
 In this approach, we have explored the effectiveness of pipelining, and are implementing a 5-stage pipelinig for better results.
+
+## References:
+[1] M. N. Topiwala and N. Saraswathi, "Implementation of a 32-bit MIPS based RISC processor using Cadence," 2014 IEEE International Conference on Advanced Communications, Control and Computing Technologies, Ramanathapuram, India, 2014, pp. 979-983, doi: 10.1109/ICACCCT.2014.7019240. keywords: {Registers;Clocks;Switches;MIPS;5-stage pipeline;ASIC flow},
+
+[2]
