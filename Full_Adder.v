@@ -1,9 +1,7 @@
 `timescale 1ns/1ns
 
 // Full Adder
-module Full_Adder(a,b,cin,sum,cout);
-  input a,b,cin;
-  output sum,cout;
+module Full_Adder(output sum, cout, input a, b, cin);
   wire x,y,z;
  
   Half_Adder h1(.a(a),.b(b),.s(x),.c(y));
