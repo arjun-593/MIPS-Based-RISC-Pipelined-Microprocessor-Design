@@ -267,4 +267,12 @@ To load the contents from a given memory address, add 45 to it and store it in t
 ## References:
 [1] M. N. Topiwala and N. Saraswathi, "Implementation of a 32-bit MIPS based RISC processor using Cadence," 2014 IEEE International Conference on Advanced Communications, Control and Computing Technologies, Ramanathapuram, India, 2014, pp. 979-983, doi: 10.1109/ICACCCT.2014.7019240. keywords: {Registers;Clocks;Switches;MIPS;5-stage pipeline;ASIC flow},
 
-[2]
+[2] S. S. Khairullah, "Realization of a 16-bit MIPS RISC pipeline processor," 2022 International Congress on Human-Computer Interaction, Optimization and Robotic Applications (HORA), Ankara, Turkey, 2022, pp. 1-6, doi: 10.1109/HORA55278.2022.9799944. keywords: {Human computer interaction;Reduced instruction set computing;VHDL;Pipelines;Personal digital devices;Logic gates;Hardware;pipeline;embedded;Harvard;fetch;combinational;sequential;implementation},
+
+[3] A. E. Phangestu, I. T. Mujiono, M. I. Kom and S. Ahmad Zaini, "Five-Stage Pipelined 32-Bit RISC-V Base Integer Instruction Set Architecture Soft Microprocessor Core in VHDL," 2022 International Seminar on Intelligent Technology and Its Applications (ISITIA), Surabaya, Indonesia, 2022, pp. 304-309, doi: 10.1109/ISITIA56226.2022.9855292. keywords: {Seminars;VHDL;Microprocessors;Instruction sets;Pipelines;Licenses;Table lookup;RISC-V;RV32I;FPGA;VHDL;soft processor core;five-stage pipeline},
+
+[4] COA Lectures by IITKGP, GateSmahers, Unacademy Pipelining - COA 
+
+[5] S. M. Bhagat and S. U. Bhandari, "Design and Analysis of 16-bit RISC Processor," 2018 Fourth International Conference on Computing Communication Control and Automation (ICCUBEA), Pune, India, 2018, pp. 1-4, doi: 10.1109/ICCUBEA.2018.8697859. keywords: {Registers;Reduced instruction set computing;Computer architecture;Process control;Hardware design languages;Load modeling;RISC;Load/Store architecture;Von Neumann architecture},
+
+
