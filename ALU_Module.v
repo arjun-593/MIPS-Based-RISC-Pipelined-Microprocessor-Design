@@ -34,10 +34,10 @@ module ALU_Module(clk, rst, ALU_Con, alu_a, alu_b, alu_out, Shamt);
                 XOR     = 6'd8,
                 SLT     = 6'd9,
 
-                ADDF    = 6'd10,
-                SUBF    = 6'd11,
-                MULF    = 6'd12,
-                DIVF    = 6'd13;
+                // ADDF    = 6'd10,
+                // SUBF    = 6'd11,
+                // MULF    = 6'd12,
+                // DIVF    = 6'd13;
                 
 
   //Floating Point Unit
@@ -72,10 +72,10 @@ module ALU_Module(clk, rst, ALU_Con, alu_a, alu_b, alu_out, Shamt);
             XOR:    alu_out <= a ^ b;
             SLT:    alu_out <=  (a < b) ? 32'b00000000000000000000000000000001 : 32'b0; 
 
-            ADDF:   alu_out <= add_out;
-            SUBF:   alu_out <= sub_out;
-            MULF:   alu_out <= mul_out;
-            DIVF:   alu_out <= div_out;
+            // ADDF:   alu_out <= add_out;
+            // SUBF:   alu_out <= sub_out;
+            // MULF:   alu_out <= mul_out;
+            // DIVF:   alu_out <= div_out;
             
             default: alu_out <= 32'bz;
 
