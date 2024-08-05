@@ -76,6 +76,8 @@ Main work was focused on Integration and Initial Testing of our code. Then after
 In this approach, we have explored the effectiveness of pipelining, and are implementing a 5-stage pipelinig for better results.
 32 bit Program Counter, NO flag registers, very few addressing modes and assuming memory word size is 32 bits.
 
+<img src="https://github.com/arjun-593/MIPS-Based-RISC-Pipelined-Microprocessor-Design/blob/main/data/demo/processor.png" width = 848 height = 400>
+
 ### Registers
 
 32 Registers of 32 bit each. Register 0 is always read as zero and loads to it have no effect.
